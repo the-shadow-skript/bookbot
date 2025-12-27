@@ -14,3 +14,14 @@ def calculate_number_of_characters(book):
     elif char in char_count:
       char_count[char] += 1
   return char_count
+
+def sort_number_of_characters_into_list(dictionary):
+  sorted_list = []
+  for char in dictionary:
+    if char.isalpha() == True:
+      sorted_list.append({"char": char, "num": dictionary[char]})
+  sorted_list.sort(key=sort_on, reverse=True)
+  return sorted_list
+
+def sort_on(items):
+  return items["num"]
